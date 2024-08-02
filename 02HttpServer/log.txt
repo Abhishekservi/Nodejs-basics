@@ -1,8 +1,5 @@
-1722458063267: New request received from /
-1722458063498: New request received from /favicon.ico
-1722458075479: New request received from /contact
-1722458075635: New request received from /favicon.ico
-1722458081451: New request received from /as
-1722458081600: New request received from /favicon.ico
-1722458086318: New request received from /about
-1722458086458: New request received from /favicon.ico
+1722489754499: GET New request received from /
+1722489767249: GET New request received from /contact?myname=contact&userId=1
+1722489864680: GET New request received from /signup
+1722489875588: GET New request received from /contact?myname=contact&userId=1
+1722489880872: GET New request received from /signup
