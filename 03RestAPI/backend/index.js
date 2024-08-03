@@ -9,6 +9,18 @@ const PORT = 3000;
 //MiddleWare - Plugin for express to parse json
 app.use(express.urlencoded({ extended: false }));
 
+app.use((req, res, next) => {
+    console.log('Middleware 1 is running');
+    next();
+})
+
+app.use((req, res, next) => {
+    fs.appendFile('log.txt', `${Date.now()} Request Method: ${req.method} Request URL: ${req.path} \n`, (err,data) => {
+        next();
+    }
+)
+})
+
 app.get('/', (req, res) => {
     res.send('Hello World');
 })
@@ -35,6 +47,8 @@ app
     const user = users.find((user) => user.id ===id);
     if(user){
         res.json(user);
+    } else {
+        res.json({status: 'error', message: 'User not found'});
     }
 }).patch((req, res) => {
 

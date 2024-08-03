@@ -1,0 +1,5 @@
+1722682965621 Request Method: GET Request URL: /api/users/555 
+1722683038272 Request Method: GET Request URL: /api/users/555 
+1722683051307 Request Method: POST Request URL: /api/users 
+1722683063957 Request Method: DELETE Request URL: /api/users/55 
+1722683074955 Request Method: DELETE Request URL: /api/users/555 
