@@ -22,7 +22,10 @@ app.use((req, res, next) => {
 })
 
 app.get('/', (req, res) => {
-    res.send('Hello World');
+
+    /// Creatinf a custom header
+    res.setHeader('X-MyName', 'Abhishek');
+    res.status(200).send('Hello World');
 })
 
 app.get('/users', (req, res) => {
@@ -48,7 +51,7 @@ app
     if(user){
         res.json(user);
     } else {
-        res.json({status: 'error', message: 'User not found'});
+        res.status(404).json({status: 'error', message: 'User not found'});
     }
 }).patch((req, res) => {
 
@@ -95,9 +98,12 @@ app
 app.post('/api/users', (req,res) => {
     //create user
     const body = req.body;
-    users.push({...body, id : users.length + 1});
+    if (!body.first_name || !body.last_name || !body.email) {
+        return res.status(400).json({ status: 'error', message: 'Please enter all fields' });
+    }
+    users.push({...body, id : users.length + 500});
     fs.writeFile('./MOCK_DATA.json', JSON.stringify(users), (err, data) => {
-    return res.json({ status : 'sucesss', id: users.length });
+    return res.json({ status : 'sucesss', id: users.length + 499 });
     })
 })
 
