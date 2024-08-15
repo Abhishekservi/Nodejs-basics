@@ -11,7 +11,10 @@ async function handlegenerateNewShortUrl(req, res) {
         visitHistory: []
     });
 
-    return res.json({ id: shortId });
+    return res.render('home',{
+        id: shortId
+    });
+    
 }
 
 async function handleRedirectUrl(req, res) {
@@ -21,7 +24,11 @@ async function handleRedirectUrl(req, res) {
       { $push: { visitHistory: { timestamp: Date.now() } } }
     );
   
-    res.redirect(entry.redirectUrl);
+    if (!entry) {
+      return res.status(404).json({ error: 'URL not found' });
+    }
+  
+    return res.redirect(entry.redirectUrl);
   
 }
 
@@ -32,7 +39,6 @@ async function handleGetAnalytics(req,res){
     return res.json({totalClicks: result.visitHistory.length,
         analytics: result.visitHistory});
 }; 
-
 
 
 module.exports = {
