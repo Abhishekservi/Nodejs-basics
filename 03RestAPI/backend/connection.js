@@ -4,4 +4,4 @@ async function connectMongoDb(url) {
     return moongose.connect(url);
 }
 
-module.exports = connectMongoDb;
+module.exports = {connectMongoDb};

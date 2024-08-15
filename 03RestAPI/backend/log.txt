@@ -57,3 +57,13 @@
 1723271500021 Request Method: GET Request URL: /users 
 1723271569741 Request Method: GET Request URL: /users 
 1723307390817 Request Method: GET Request URL: /api/users/66b45cf47c267aa65ace65f6 
+1723532131929 Request Method: GET Request URL: /api/users 
+1723532195255 Request Method: POST Request URL: /api/users 
+1723532200281 Request Method: GET Request URL: /api/users 
+1723532281046 Request Method: GET Request URL: /api/users/66bb03a31198f706417832b3 
+1723532292256 Request Method: DELETE Request URL: /api/users/66b45cf47c267aa65ace65f6 
+1723532297031 Request Method: DELETE Request URL: /api/users/66bb03a31198f706417832b3 
+1723532301373 Request Method: GET Request URL: /api/users/66bb03a31198f706417832b3 
+1723532304778 Request Method: GET Request URL: /api/users/ 
+1723532336975 Request Method: PATCH Request URL: /api/users/66b4c490a57bb0a7f934c52f 
+1723532341254 Request Method: GET Request URL: /api/users/ 
